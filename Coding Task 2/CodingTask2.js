@@ -1,5 +1,5 @@
 /*
-*******CODING TASK No 2**********
+**********************CODING TASK No 2*****************************
 1. Create an array - students, insert four items, which should be objects and have three properties: name, score1, score2,
     with the following values:
     a. John, 47, 46
@@ -14,7 +14,7 @@
 5. Display the final result in console.
 */
 
-const studentsData = [
+const STUDENTS = [
   {
     name: 'John',
     score1: 47,
@@ -37,22 +37,23 @@ const studentsData = [
   },
 ]
 
-const degreesData = ['A', 'B', 'C', 'D', 'E']
-const limitsData = [91, 81, 71, 61, 51]
+const DEGREES = ['A', 'B', 'C', 'D', 'E']
+const LIMITS = [91, 81, 71, 61, 51]
 
-function calculateTotal (score1, score2){
-  return score1 + score2
+const calculateTotalScore = (score1, score2) => score1 + score2
+
+const printStudentDegree = (studentName, limitIndex) => {
+  console.log(`The degree of ${studentName} is ${DEGREES[limitIndex] || DEGREES[DEGREES.length -1]}`)
 }
 
-function displayFinalResults (students, degrees, limits) {
-  students.map((student)=> {
-    const total = calculateTotal(student.score1, student.score2)
-    if (total >= limits[0]) console.log('The degree of ' + student.name + ' is ' + degrees[0])
-    else if (total >= limits[1]) console.log('The degree of ' + student.name + ' is ' + degrees[1])
-    else if (total >= limits[2]) console.log('The degree of ' + student.name + ' is ' + degrees[2])
-    else if (total >= limits[3]) console.log('The degree of ' + student.name + ' is ' + degrees[3])
-    else console.log('The degree of ' + student.name + ' is ' + degrees[4])
+const getLimitIndex = (totalScore) => LIMITS.findIndex(limit => totalScore >= limit)
+
+const showStudentsFinalResult = (students) => {
+  students.map(({name, score1, score2}) => {
+    const totalScore = calculateTotalScore(score1, score2)
+    const limitIndex = getLimitIndex(totalScore)
+    printStudentDegree(name, limitIndex)
   })
 }
 
-displayFinalResults(studentsData, degreesData, limitsData)
+showStudentsFinalResult(STUDENTS, DEGREES, LIMITS)
