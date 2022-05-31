@@ -9,12 +9,11 @@
     Return an empty array if the object is empty.
 */
 
-console.log('\n' + 'A1: ')
 
-const toArray = (object) => {
+function toArray (x) {
   let array = []
-  for (var key in object) {
-    array.push([key, object[key]])
+  for (var i in x) {
+    array.push([i, x[i]])
   }
   return array
 }
@@ -35,11 +34,18 @@ console.log(toArray({}))
     You can expect only positive integers for vote counts.
 */
 
-console.log('\n' + 'A2: ')
+function isInt(value) {
+  var x;
+  if (isNaN(value)) {
+    return false;
+  }
+  x = parseFloat(value);
+  return (x | 0) === x;
+}
 
-const getVoteCount = ({ upvotes, downvotes }) => {
-  if (Number.isInteger(upvotes) && upvotes >= 0 && Number.isInteger(downvotes) && downvotes >= 0){
-    return upvotes - downvotes
+function getVoteCount (votes) {
+  if (isInt(votes.upvotes) && votes.upvotes >= 0 && isInt(votes.downvotes) && votes.downvotes >= 0){
+    return votes.upvotes - votes.downvotes
   }
   return 'Only positive integers are allowed'
 }
@@ -63,10 +69,9 @@ console.log(getVoteCount({ upvotes: 132, downvotes: 132 }))
     If you're really stuck, unlock solutions in the Solutions tab.
 */
 
-console.log('\n' + 'A3: ')
 
-const addEnding = (array, suffix) => {
-  return array.map((word) => word + suffix)
+function addEnding (array, ending) {
+  return array.map((word) => word + ending)
 }
 
 console.log(addEnding(["clever", "meek", "hurried", "nice"], "ly"))
@@ -90,12 +95,11 @@ console.log(addEnding(["bend", "sharpen", "mean"], "ing"))
     ]) ➞ 62600
 */
 
-console.log('\n' + 'A4: ')
 
-const getBudgets = (array) => {
+function getBudgets (array) {
   let sum = 0
-  array.forEach(function ({ budget }) {
-    sum = sum + budget
+  array.forEach(function (person) {
+    sum = sum + person.budget
   });
   return sum
 }
@@ -125,14 +129,13 @@ console.log(getBudgets(
     All test cases are one word and only contain letters.
 */
 
-console.log('\n' + 'A5: ')
 
-const countVowels = (string) => {
-  let vowelsArray = string.match(/[aeiou]/gi)
-  if(vowelsArray === null){
+function countVowels (string) {
+  let arrayOfVowels = string.match(/[aeiou]/gi)
+  if(arrayOfVowels === null){
     return 0
   }
-  return vowelsArray.length
+  return arrayOfVowels.length
 }
 
 console.log(countVowels("Celebration") )
