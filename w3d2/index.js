@@ -6,8 +6,12 @@ function factorialRecursive(n) {
   if(n === 0){
     return 1
   }
-  return 'Factorial of a negative number does not exist!'
 
+  if(n < 0){
+    return 'Factorial of a negative number does not exist!'
+  }
+
+  return 'Invalid argument.'
 }
 
 console.log(factorialRecursive(2));
@@ -15,3 +19,5 @@ console.log(factorialRecursive(2));
 console.log(factorialRecursive(5)); // 5! = 5 * 4 * 3 * 2 * 1 = 120
 
 console.log(factorialRecursive(-1000));
+
+console.log(factorialRecursive('omegalul'));
