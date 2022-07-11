@@ -31,11 +31,16 @@ public class App {
 
 
   public static void main(String[] args) {
-    System.out.println("Choose your convertion type:");
-    System.out.println("> Type 1 for length convertion");
-    System.out.println("> Type 2 for mass convertion");
-    System.out.println("> Type 3 for temperature convertion");
-    convertionType = scan.nextInt();
-    chooseConvertion(convertionType);
+
+    do{
+      System.out.println("Choose your convertion type:");
+      System.out.println("> Type 1 for length convertion");
+      System.out.println("> Type 2 for mass convertion");
+      System.out.println("> Type 3 for temperature convertion");
+      System.out.println("> Type any other key to quit");
+      convertionType = scan.nextInt();
+      chooseConvertion(convertionType);
+        }while(convertionType >= 1 && convertionType <= 3);
+    }
   }
-}
+

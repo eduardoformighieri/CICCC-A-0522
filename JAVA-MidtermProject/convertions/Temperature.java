@@ -47,7 +47,7 @@ public class Temperature {
     toUnity = scan.nextInt();
 
     result = convert(fromUnity, toUnity, value);
-    System.out.printf("Result: %f", result);
+    System.out.printf("Result: %f %n", result);
 
   }
 }
