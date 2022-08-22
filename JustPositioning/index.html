@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>!Phone</title>
+    <style>
+      :root {
+        --primary-bg: #2c3d50;
+        --secondary-bg: #161616;
+        --box-shadow-color-1: gold;
+        --box-shadow-color-2: #242525;
+        --box-shadow-color-3: #ecf0f1;
+        --phone-width: 350px;
+        --phone-height: 700px;
+      }
+      body {
+        background-color: var(--secondary-bg);
+      }
+
+      #cellphone {
+        margin: 80px auto;
+        background-color: var(--secondary-bg);
+        width: var(--phone-width);
+        height: var(--phone-height);
+        border-radius: 20px;
+        box-shadow: -2px -2px 1px 0.1px var(--box-shadow-color-1),
+          4px 12px 4px 2px var(--box-shadow-color-2);
+      }
+      #audioOutputs {
+        padding-top: 4px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #centerOutput {
+        margin: 8px auto;
+        background: var(--primary-bg);
+        width: 5px;
+        height: 5px;
+        border-radius: 32px;
+      }
+
+      #lineOutput {
+        background: var(--primary-bg);
+        width: 50px;
+        height: 8px;
+        border-radius: 32px;
+      }
+
+      #leftOutput {
+        margin-top: auto;
+        margin-bottom: 4px;
+        margin-right: 12px;
+        background: var(--primary-bg);
+        width: 8px;
+        height: 8px;
+        border-radius: 32px;
+      }
+
+      #screen {
+        margin: 20px auto;
+        background: var(--primary-bg);
+        width: 320px;
+        height: 560px;
+        border-radius: 8px;
+      }
+
+      #mainButton {
+        margin: 12px auto;
+        background: var(--secondary-bg);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: -1px -1px 1px 0.1px var(--box-shadow-color-1),
+          0px -3px 1px 0.1px var(--box-shadow-color-3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cellphone">
+      <div id="audioOutputs">
+        <div id="leftOutput"></div>
+        <div>
+          <div id="centerOutput"></div>
+          <div id="lineOutput"></div>
+        </div>
+      </div>
+
+      <div id="screen"></div>
+      <div id="mainButton"></div>
+    </div>
+  </body>
+</html>
