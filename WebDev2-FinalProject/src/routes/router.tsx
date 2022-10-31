@@ -8,7 +8,7 @@ export const AppRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path=":searchTerm" element={<SearchedGifs />} />
+        <Route path="/:searchTerm" element={<SearchedGifs />} />
       </Routes>
     </BrowserRouter>
   );
