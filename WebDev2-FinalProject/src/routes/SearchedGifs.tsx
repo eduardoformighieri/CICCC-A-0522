@@ -6,8 +6,6 @@ import { gf } from '../utils/GiphyFetch';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../components/Header';
 
-// define the components in a separate function so we can
-// use the context hook. You could also use the render props pattern
 export const SearchedGifs = () => {
   const { searchTerm } = useParams();
   const { width } = useWindowSize();

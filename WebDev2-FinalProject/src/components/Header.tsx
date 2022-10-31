@@ -24,7 +24,7 @@ export const Header = () => {
           <Form
             className="d-flex"
             onSubmit={() => {
-              navigate(`/${searchInputValue}`);
+              navigate(`/${searchInputValue}`, { replace: true });
               setSearchInputValue('');
             }}>
             <Form.Control
