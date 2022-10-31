@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { AppRoutes } from './routes/router';
+import { AppRoutes } from './routes';
 
 const queryClient = new QueryClient();
 
