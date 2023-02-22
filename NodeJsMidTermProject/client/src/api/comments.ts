@@ -2,7 +2,7 @@ import { Comment, CreateCommentDto } from '../types';
 import { getStorageByKey } from '../utils/storage';
 import { api } from './';
 
-const { token } = getStorageByKey<{
+const storage = getStorageByKey<{
   name: string;
   username: string;
   token: string;
@@ -17,7 +17,7 @@ export const createComment = async (
     `/comments/${postId}`,
     { content },
     {
-      headers: { 'x-access-token': token },
+      headers: { 'x-access-token': storage?.token },
     }
   );
   return data;
@@ -30,7 +30,7 @@ export const deleteComment = async ({
   commentId: string;
 }) => {
   const { data } = await api.delete(`/comments/${commentId}`, {
-    headers: { 'x-access-token': token },
+    headers: { 'x-access-token': storage?.token },
   });
   return data;
 };
